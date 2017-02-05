@@ -15,7 +15,7 @@ function getInfo(callback){
 
         usagePerCore.push((1-(idleDifference/sumDifference))*100);
     }
-    callback(null, usagePerCore);
+    callback(usagePerCore);
     }, 100);
 }
 
