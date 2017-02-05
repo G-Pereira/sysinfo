@@ -16,7 +16,7 @@ function getInfo(callback){
         usagePerCore.push((1-(idleDifference/sumDifference))*100);
     }
     callback(usagePerCore);
-    }, 100);
+    }, 1000);
 }
 
 function readTimes(){
