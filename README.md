@@ -9,9 +9,9 @@ Simply:
 ## Usage
 
 ```js
-var sysinfo = require("systats");
+var systats = require("systats");
 
-sysinfo.read(function(result){
+systats.read(function(result){
     var cpu = result.cpu;
     var freeMemory = result.memory.free;
     var totalMemory = result.memory.total;
