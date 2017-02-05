@@ -1,5 +1,9 @@
 var os = require("os");
 
+var systemUsage= {
+        cpu: [],
+    }
+
 function getInfo(callback){
 
     var initialMeasure = readTimes();
@@ -8,12 +12,11 @@ function getInfo(callback){
 
     var lastMeasure = readTimes(); 
 
-    var usagePerCore= [];
     for(var i = 0; i < initialMeasure.length; i++){
         var sumDifference = lastMeasure[i].sum-initialMeasure[i].sum;
         var idleDifference = lastMeasure[i].idle-initialMeasure[i].idle;
 
-        usagePerCore.push((1-(idleDifference/sumDifference))*100);
+        systemUsage.cpu.push((1-(idleDifference/sumDifference))*100);
     }
     callback(usagePerCore);
     }, 1000);
