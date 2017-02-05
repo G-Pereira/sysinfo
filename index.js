@@ -18,7 +18,7 @@ function getInfo(callback){
 
         systemUsage.cpu.push((1-(idleDifference/sumDifference))*100);
     }
-    callback(usagePerCore);
+    callback(systemUsage);
     }, 1000);
 }
 
