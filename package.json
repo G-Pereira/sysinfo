@@ -1,6 +1,6 @@
 {
   "name": "systats",
-  "version": "1.0.1",
+  "version": "1.0.0",
   "description": "Retrieves CPU and RAM usage",
   "main": "index.js",
   "repository": {
