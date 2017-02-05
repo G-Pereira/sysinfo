@@ -9,7 +9,7 @@ var systemUsage= {
         uptime: 0
     }
 
-function getInfo(callback){
+function read(callback){
 
     // CPU
     var initialMeasure = readTimes();
@@ -54,4 +54,4 @@ function readTimes(){
     return timePerCore;
 }
 
-module.exports = getInfo;
+module.exports = read;

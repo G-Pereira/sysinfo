@@ -1,11 +1,11 @@
 {
-  "name": "sysinfo",
+  "name": "systats",
   "version": "1.0.0",
   "description": "Retrieves CPU and RAM usage",
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/G-Pereira/sysinfo.git"
+    "url": "git+https://github.com/G-Pereira/systats.git"
   },
   "keywords": [
     "cpu",
@@ -17,7 +17,7 @@
   "author": "Gonçalo Camelo Neves Pereira",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/G-Pereira/sysinfo/issues"
+    "url": "https://github.com/G-Pereira/systats/issues"
   },
-  "homepage": "https://github.com/G-Pereira/sysinfo#readme"
+  "homepage": "https://github.com/G-Pereira/systats#readme"
 }

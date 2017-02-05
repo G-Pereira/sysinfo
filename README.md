@@ -1,4 +1,4 @@
-#SysInfo
+#SyStats
 
 ## Installation
 
@@ -9,9 +9,9 @@ Simply:
 ## Usage
 
 ```js
-var sysinfo = require("sysinfo");
+var sysinfo = require("systats");
 
-sysinfo.getInfo(function(result){
+sysinfo.read(function(result){
     var cpu = result.cpu;
     var freeMemory = result.memory.free;
     var totalMemory = result.memory.total;
