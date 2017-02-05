@@ -2,10 +2,16 @@ var os = require("os");
 
 var systemUsage= {
         cpu: [],
+        memory: {
+            free: 0,
+            total: 0
+        },
+        uptime: 0
     }
 
 function getInfo(callback){
 
+    // CPU
     var initialMeasure = readTimes();
 
     setTimeout(function() { 
@@ -18,6 +24,14 @@ function getInfo(callback){
 
         systemUsage.cpu.push((1-(idleDifference/sumDifference))*100);
     }
+
+    // RAM
+    systemUsage.memory.free = os.freemem();
+    systemUsage.memory.total = os.totalmem();
+
+    // UPTIME
+    systemUsage.uptime = os.uptime();
+
     callback(systemUsage);
     }, 1000);
 }
