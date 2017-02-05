@@ -54,6 +54,4 @@ function readTimes(){
     return timePerCore;
 }
 
-getInfo(function(result){
-    console.log(result)
-})
+module.exports = getInfo;
