@@ -1,6 +1,6 @@
-var os = require("os");
+const os = require("os");
 
-var systemUsage= {
+let systemUsage= {
         cpu: [],
         memory: {
             free: 0,
@@ -12,15 +12,15 @@ var systemUsage= {
 function read(callback){
 
     // CPU
-    var initialMeasure = readTimes();
+    let initialMeasure = readTimes();
 
     setTimeout(function() { 
 
-    var lastMeasure = readTimes(); 
+    let lastMeasure = readTimes(); 
 
-    for(var i = 0; i < initialMeasure.length; i++){
-        var sumDifference = lastMeasure[i].sum-initialMeasure[i].sum;
-        var idleDifference = lastMeasure[i].idle-initialMeasure[i].idle;
+    for(let i = 0; i < initialMeasure.length; i++){
+        let sumDifference = lastMeasure[i].sum-initialMeasure[i].sum;
+        let idleDifference = lastMeasure[i].idle-initialMeasure[i].idle;
 
         systemUsage.cpu.push((1-(idleDifference/sumDifference))*100);
     }
@@ -37,11 +37,11 @@ function read(callback){
 }
 
 function readTimes(){
-    var cpus = os.cpus();
-    var timePerCore = [];
+    let cpus = os.cpus();
+    let timePerCore = [];
 
     cpus.forEach(function(cpu){
-        var sum = 0;
+        let sum = 0;
         for(type in cpu.times) {
             sum += cpu.times[type];
         }
@@ -53,5 +53,13 @@ function readTimes(){
     });
     return timePerCore;
 }
+
+read(function(result){
+    var cpu = result.cpu;
+    var freeMemory = result.memory.free;
+    var totalMemory = result.memory.total;
+    var uptime = result.uptime;
+console.log(result);
+})
 
 module.exports = read;
