@@ -4,7 +4,7 @@
 
 Simply:
 ```bash
- npm install --save sysinfo
+ npm install --save systats
 ```
 ## Usage
 
